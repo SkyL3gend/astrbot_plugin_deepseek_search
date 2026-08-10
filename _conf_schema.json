@@ -1,0 +1,33 @@
+{
+  "api_key": {
+    "description": "DeepSeek API Key（platform.deepseek.com 的 API keys 页面创建，以 sk- 开头）",
+    "type": "string",
+    "default": "",
+    "obvious_hint": true
+  },
+  "model": {
+    "description": "DeepSeek 模型名称（需支持官方内置联网搜索）",
+    "type": "string",
+    "default": "deepseek-v4-flash"
+  },
+  "base_url": {
+    "description": "DeepSeek API 地址，一般不需要改",
+    "type": "string",
+    "default": "https://api.deepseek.com"
+  },
+  "timeout_seconds": {
+    "description": "单次搜索请求超时时间（秒）",
+    "type": "int",
+    "default": 30
+  },
+  "max_output_tokens": {
+    "description": "搜索回答的最大输出 token 数",
+    "type": "int",
+    "default": 4096
+  },
+  "sources_limit": {
+    "description": "返回给 AI 的来源引用条数上限",
+    "type": "int",
+    "default": 5
+  }
+}

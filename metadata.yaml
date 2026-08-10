@@ -1,0 +1,10 @@
+plugin_id: astrbot_plugin_deepseek_search
+plugin_name: DeepSeek 原生联网搜索
+display_name: DeepSeek 原生联网搜索
+plugin_desc: 为 DeepSeek 聊天模型注册官方内置联网搜索工具（deepseek_web_search）
+short_desc: 让 DeepSeek 模型用官方 web_search 联网查最新信息
+plugin_author: Codex
+plugin_version: 1.0.0
+plugin_license: MIT
+plugin_repo_url: ""
+astrbot_version: ">=4.5.7"
