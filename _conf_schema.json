@@ -6,9 +6,13 @@
     "obvious_hint": true
   },
   "model": {
-    "description": "DeepSeek 模型名称（需支持官方内置联网搜索）",
+    "description": "DeepSeek 模型名称（flash 或 pro，均支持官方联网搜索）",
     "type": "string",
-    "default": "deepseek-v4-flash"
+    "default": "deepseek-v4-flash",
+    "options": [
+      "deepseek-v4-flash",
+      "deepseek-v4-pro"
+    ]
   },
   "base_url": {
     "description": "DeepSeek API 地址，一般不需要改",
