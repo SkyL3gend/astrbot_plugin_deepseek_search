@@ -3,7 +3,7 @@ plugin_id: astrbot_plugin_deepseek_search
 plugin_name: DeepSeek 原生联网搜索
 plugin_desc: 为 DeepSeek 聊天模型注册官方内置联网搜索工具（deepseek_web_search）
 plugin_author: SkyL3gend
-plugin_version: 1.1.0
+plugin_version: 1.2.0
 plugin_license: MIT
 plugin_repo_url: https://github.com/SkyL3gend/astrbot_plugin_deepseek_search
 astrbot_version: ">=4.5.7"
@@ -15,14 +15,21 @@ short_desc: 让 DeepSeek 模型用官方 web_search 联网查最新信息
 desc: |
   为 DeepSeek 聊天模型注册官方内置的联网搜索工具 `deepseek_web_search`。
 
-  当你的机器人需要查询最新信息时，会自动调用该工具，通过 DeepSeek 官方 `/responses` 接口的内置 `web_search` 能力联网搜索，并把结果和来源链接交还给机器人整理成回复。
+  当你的机器人需要查询最新信息时，会自动调用该工具，通过 DeepSeek 官方
+  Anthropic 兼容端点（`/anthropic/v1/messages`）的服务端 `web_search` 能力联网搜索，
+  并把结果和来源链接交还给机器人整理成回复。
 
   无需再让机器人自己写代码爬网页。
 
-  使用前需要在插件配置中填入 DeepSeek API Key（platform.deepseek.com 创建，以 sk- 开头），并确认聊天模型为 deepseek-v4-flash 或 deepseek-v4-pro（两者均支持官方联网搜索）。
+  使用前需要在插件配置中填入 DeepSeek API Key（platform.deepseek.com 创建，以 sk- 开头），
+  并确认聊天模型为 deepseek-v4-flash 或 deepseek-v4-pro（两者均支持官方联网搜索）。
 
   注意：联网搜索会额外消耗 token。
-version: 1.1.0
+
+  v1.2.0 修复：此前版本使用的 OpenAI 兼容 `/responses` 端点会静默忽略 `web_search`
+  内置工具，导致搜不到任何东西却不报错；现已切换到官方真正执行服务端搜索的
+  Anthropic 兼容端点，并在搜索未真正执行时明确报错。
+version: 1.2.0
 author: SkyL3gend
 repo: https://github.com/SkyL3gend/astrbot_plugin_deepseek_search
 support_platforms:
